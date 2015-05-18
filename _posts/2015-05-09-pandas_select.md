@@ -20,9 +20,10 @@ sid:    pandas_select
 * .ix 支持整数和标签混合输入。但是当axis是基于整数的时候，**ONLY** lable based access and not positinal access is supported. 这种情况下应明确使用哪种，是.iloc还是.loc
 
 以loc为例，各种数据的使用（p.loc['a']等价于p.loc['a'], :, :）	
-<table class="table">
-	<tr><td>Object Type</td><td>Indexers</td></tr>
-	<tr><td>Series</td><td>s.loc[indexer]</td></tr>
-	<tr><td>DataFrame</td><td>df.loc[row_indexer,column_indexer]</td></tr>
-	<tr><td>Panel</td><td>p.loc[item_indexer,major_indexer,minor_indexer]</td></tr>
-</table>
+
+|Object Type    |Indexers                                       |
+|:--------------|:----------------------------------------------|
+|Series         |s.loc[indexer]                                 |
+|DataFrame      |df.loc[row_indexer,column_indexer]             |
+|Panel          |p.loc[item_indexer,major_indexer,minor_indexer]|
+
