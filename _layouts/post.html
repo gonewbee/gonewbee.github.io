@@ -14,6 +14,9 @@ layout: default
 
 </div>
 
+<a href="{{ page.next.url | prepend: site.baseurl }}" class="btn btn-primary btn-lg active" role="button" title="{{ page.next.title }}"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></a>
+<a href="{{ page.previous.url | prepend: site.baseurl }}" class="btn btn-primary btn-lg active" role="button" title="{{ page.previous.title }}"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></a>
+
 <a name="comment"></a>
 <div id="SOHUCS" sid="blog_{{ page.sid }}"></div>
 <script src="/js/comment.js"></script>
