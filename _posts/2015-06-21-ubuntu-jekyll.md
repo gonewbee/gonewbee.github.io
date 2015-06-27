@@ -29,5 +29,14 @@ sid:    linux_jekyll
 ### 1.4 安装nodejs
 	sudo apt-get install nodejs
 
-## 运行 ##
+### 1.5 运行
 	jekyll serve
+
+## 2. 配置
+
+###2.1 添加分类
+参考：[使用Jekyll在Github上搭建个人博客（文章分类索引）](http://www.tuicool.com/articles/INBnMz)
+
++ 使用 {{ category | first }} 输出分类的名称
++ 使用 {{ category | last | size }} 输出该分类下文章的数目 
++ 遍历category.last输出所有文章的信息，构建到该文章的索引
