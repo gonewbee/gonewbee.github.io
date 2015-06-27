@@ -34,7 +34,7 @@ sid:    linux_jekyll
 
 ## 2. 配置
 
-###2.1 添加分类
+###2.1 添加分类功能
 参考：[使用Jekyll在Github上搭建个人博客（文章分类索引）](http://www.tuicool.com/articles/INBnMz)
 
 + 使用 {{ category | first }} 输出分类的名称
