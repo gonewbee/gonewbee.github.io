@@ -28,8 +28,15 @@ sid:    linux_command
 ## 3. sed
 
 ### 3.1 替换内容	
+	sed -i "s/old/new/g" test.txt #加-i会实际作用到文件
 
 ## 4. 重启输入法
 killall ibus-daemon // killall  杀死进程 ， ibus-daemon 进程名		
 
 ibus-daemon -d // -d 后台运行 | &
+
+## 5. 比较diff
+
+### 5.1 比较文件夹
+	#比较两个文件夹，只显示不同的文件名称，忽略.git文件夹
+	diff -Nrq . ~/WorkSpaces/windows --exclude=.git
