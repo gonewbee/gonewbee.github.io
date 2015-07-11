@@ -40,3 +40,8 @@ sid:    linux_jekyll
 + 使用 {{ category | first }} 输出分类的名称
 + 使用 {{ category | last | size }} 输出该分类下文章的数目 
 + 遍历category.last输出所有文章的信息，构建到该文章的索引
+
+###2.2 添加其它目录
+在工程根目录下新建目录files用于存储数据，使用url：
+
+	[使用示例](/files/test.c)

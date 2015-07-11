@@ -17,3 +17,10 @@ sid:    flask_learn
 	import flask
 	print(flask.__version__)
 
+## 1.2 配置pycharm
+
+### 1.2.1 html的tab设置2个字符
+
+	File -> Default Settings -> Editor -> Code Style
+	-> HTML 修改Tab size:2 Indent:2 Continuation indent:4
+
