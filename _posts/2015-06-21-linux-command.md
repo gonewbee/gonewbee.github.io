@@ -30,6 +30,14 @@ sid:    linux_command
 ### 3.1 替换内容	
 	sed -i "s/old/new/g" test.txt #加-i会实际作用到文件
 
+### 3.2 添加行
+在文件最后添加一行： export WLOG_APPENDER="FILE"	
+
+	sed -i '$a export WLOG_APPENDER=\"FILE\"' text.txt
+
+### 3.3 删除行
++ 删除包含WLOG_APPENDER的行：sed -i '/WLOG_APPENDER/d' text.txt
+
 ## 4. 重启输入法
 killall ibus-daemon // killall  杀死进程 ， ibus-daemon 进程名		
 

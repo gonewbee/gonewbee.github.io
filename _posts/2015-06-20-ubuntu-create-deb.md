@@ -127,3 +127,8 @@ xfreerdp.conf内容：
 	else
 	   sed -i '$a application\/msword=xfreerdp.desktop;' ~/.local/share/applications/mimeinfo.cache
 	fi
+
+#默认打开方式
+ubuntu的全局默认打开方式保存在/etc/gnome/defaults.list	
+
+个人的打开方式保存在~/.local/share/applications/mimeapps.list 
