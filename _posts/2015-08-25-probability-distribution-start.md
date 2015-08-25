@@ -47,3 +47,37 @@ plt.show()
 ```
 
 ![二项分布](/images/binomial-distribution.png)
+
+# 2. 泊松分布
+泊松分布（Poisson distribution），参考[泊松分布与美国枪击案](http://www.ruanyifeng.com/blog/2013/01/poisson_distribution.html)。如果平均值为2，则泊松分布：	
+
+```python
+#coding=utf-8
+from scipy.stats import poisson
+import numpy as np
+import matplotlib.pyplot as plt
+
+rate = 2 # 平均值为2
+rv = poisson(rate) # 计算泊松分布
+print(rv.pmf(0)) # 发送0次的概率
+
+# 打印发送0-10次的概率列表
+k = np.arange(0, 10)
+print(rv.pmf(k))
+
+# 使用matplotlib绘制出概率分布
+plt.plot(k, rv.pmf(k), 'o-')
+plt.title('Piosson: rate=%d' % (rate), fontsize=15)
+plt.xlabel('Number of occur')
+plt.ylabel('Probability of occur', fontsize=15)
+plt.show()
+```
+执行python poisson.py输出：
+
+```sh
+0.135335283237
+[  1.35335283e-01   2.70670566e-01   2.70670566e-01   1.80447044e-01
+   9.02235222e-02   3.60894089e-02   1.20298030e-02   3.43708656e-03
+   8.59271640e-04   1.90949253e-04]
+```
+![泊松分布](/images/poisson-distribution.png)
