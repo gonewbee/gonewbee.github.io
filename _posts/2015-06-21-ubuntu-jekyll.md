@@ -29,7 +29,13 @@ sid:    linux_jekyll
 ### 1.4 安装nodejs
 	sudo apt-get install nodejs
 
-### 1.5 运行
+### 1.5 配置markdown
+使用GFM渲染markdown在_config.yml文件中添加（注意是两个空格）：
+
+	kramdown:
+	  input: GFM
+
+### 1.6 运行
 	jekyll serve
 
 ## 2. 配置
