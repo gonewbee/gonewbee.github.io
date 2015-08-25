@@ -9,8 +9,9 @@ sid:    probability_distribution_start
 参考：[如何在Python中实现这五类强大的概率分布](http://python.jobbole.com/81321/)
 使用[scipy.stats](http://docs.scipy.org/doc/scipy/reference/stats.html)绘制概率分布
 
-#1. 二项分布
-二项分布（binomial distribution）有两个特点：	
+# 1. 二项分布
+二项分布（binomial distribution）有两个特点：
+	
 + 各次试验相互独立
 + 每次试验得到一种结果的概率不变
 
@@ -36,10 +37,13 @@ plt.xlabel('Number of successes')
 plt.ylabel('Probability of successes', fontsize=15)
 plt.show()
 ```
+
 执行python binomial.py输出：
+
 ```sh
 0.0009765625
 [ 0.00097656  0.00976563  0.04394531  0.1171875   0.20507813  0.24609375
   0.20507813  0.1171875   0.04394531  0.00976563  0.00097656]
 ```
+
 ![二项分布](/images/binomial-distribution.png)
