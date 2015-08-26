@@ -15,7 +15,7 @@ sid:    probability_distribution_start
 + 各次试验相互独立
 + 每次试验得到一种结果的概率不变
 
-二项分布有两个参数，一个是试验次数n，一个是每次试验成功的概率p，用符号表示B(n,p)或Bin(n,p)。例如：掷硬币，正面向上概率0.5，掷10次硬币，则正面向上次数的概率分布为：
+二项分布有两个参数，一个是试验次数n，一个是每次试验成功的概率p，用符号表示B(n,p)或Bin(n,p)。例如：掷硬币，正面向上概率0.5，掷10次硬币，则正面向上次数的概率分布为[binomial.py](/files/binomial.py)：
 
 ```python
 # coding=utf-8
@@ -49,7 +49,7 @@ plt.show()
 ![二项分布](/images/binomial-distribution.png)
 
 # 2. 泊松分布
-泊松分布（Poisson distribution），参考[泊松分布与美国枪击案](http://www.ruanyifeng.com/blog/2013/01/poisson_distribution.html)。如果平均值为2，则泊松分布：	
+泊松分布（Poisson distribution），参考[泊松分布与美国枪击案](http://www.ruanyifeng.com/blog/2013/01/poisson_distribution.html)。如果平均值为2，则泊松分布[poisson.py](/files/poisson.py)：	
 
 ```python
 #coding=utf-8
@@ -59,9 +59,9 @@ import matplotlib.pyplot as plt
 
 rate = 2 # 平均值为2
 rv = poisson(rate) # 计算泊松分布
-print(rv.pmf(0)) # 发送0次的概率
+print(rv.pmf(0)) # 发生0次的概率
 
-# 打印发送0-10次的概率列表
+# 打印发生0-10次的概率列表
 k = np.arange(0, 10)
 print(rv.pmf(k))
 
@@ -81,3 +81,34 @@ plt.show()
    8.59271640e-04   1.90949253e-04]
 ```
 ![泊松分布](/images/poisson-distribution.png)
+
+# 3. 超几何分布
+超几何分布（hypergeometric distribution），是一种不放回抽样。
+
+假如有500个产品，其中有5个次品，随机抽取20个，其中有两个次品的概率是多少[hypergeometric.py](/files/hypergeometric.py)。
+
+```python
+#coding=utf-8
+from scipy.stats import hypergeom
+import numpy as np
+import matplotlib.pyplot as plt
+
+# 500个产品包含5个次品，抽20个出来
+[M, n, N] = [500, 5, 20]
+rv = hypergeom(M, n, N) # 计算超几何分布
+print(rv.pmf(2)) # 其中有两个次品的概率
+
+# 抽出0-5个次品的概率
+k = np.arange(0, n+1)
+print(rv.pmf(k))
+
+plt.plot(k, rv.pmf(k), 'o-')
+plt.title('Hypergeom: total=%d total_bad=%d total_get=%d' % (M, n, N), fontsize=15)
+plt.xlabel('Number of bad get')
+plt.ylabel('Probability of get', fontsize=15)
+plt.show()
+```
+![正态分布](/images/hypergeometric-distribution.png)
+
+# 小结
+如果将上例中的抽取改为抽一个放回后继续抽，那就是“放回式抽样”，对应的是二项分布。“不放回抽样”对应的是超几何分布。
