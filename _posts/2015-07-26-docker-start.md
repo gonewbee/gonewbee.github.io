@@ -8,6 +8,13 @@ sid:    docker_start
 
 #1. image
 
+### tips
+在Ubuntu下安装docker后，执行sudo usermod -aG docker zsy。启动docker服务：
+
+```sh
+sudo service docker start
+```
+
 #1.1 查看image
 docker images
 

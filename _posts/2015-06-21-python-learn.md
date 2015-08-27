@@ -21,4 +21,15 @@ sid:    python_learn
 ## 1.2 ipython ##
 启动：ipython notebook --pylab=inline
 
-	
+## 1.3 判断系统64/32位
+
+```python
+import sys
+
+if sys.maxsize > 2**32:
+    # 64bit
+    print("amd64")
+else:
+    print("i386")
+
+```
