@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "golang生成目录嵌套json使用jstree显示"
-date:   2015-08-27 21:13:52
+date:   2015-08-30 20:45:21
 categories: golang
 sid:    jstree_golang_json
 ---
@@ -80,3 +80,4 @@ $('#using_ajax').jstree({
 ### 完整代码：
 [tree.html](https://github.com/zhangshy/netfiles/blob/master/static/test/tree.html)
 [treefile.go](https://github.com/zhangshy/netfiles/blob/master/pcshow/treefile.go)
+
