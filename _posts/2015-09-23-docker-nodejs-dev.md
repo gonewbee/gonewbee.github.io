@@ -1,0 +1,1 @@
+docker run -it -v /c/Users/zhangshy/workspace/:/workspace --name node node bash
