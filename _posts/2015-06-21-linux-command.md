@@ -48,3 +48,17 @@ ibus-daemon -d // -d 后台运行 | &
 ### 5.1 比较文件夹
 	#比较两个文件夹，只显示不同的文件名称，忽略.git文件夹
 	diff -Nrq . ~/WorkSpaces/windows --exclude=.git
+
+## 6. 注销ssh会话
+
+	pkill -9 -t pts/0 
+
+## 7. ip route设置默认网关
+
+	ip route change default via 192.168.99.113 dev eth0
+
+## 8. iptables ip转发
+
+	# 开启ip转发功能
+	echo "1" > /proc/sys/net/ipv4/ip_forward
+	iptables -t nat -A POSTROUTING -s 192.168.7.0/24 -o eth0 -j MASQUERADE
