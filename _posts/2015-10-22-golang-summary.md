@@ -64,5 +64,17 @@ go语法格式：
 	s := fmt.Sprintf("%04x%04x%04x%04x", x, y, w, h)
 	log.Println(s)
 
-## 结构体struct
+### []byte和string
++ string转[]byte
+
+	s := "Hello World!"
+	data = []byte(s)
+
++ []byte转string, [What is the best way to convert byte array to string?](http://stackoverflow.com/questions/14230145/what-is-the-best-way-to-convert-byte-array-to-string)
+
+	s := string(byteArray)
+	// or
+	s := string(byteArray[:n])
+
+	
 
